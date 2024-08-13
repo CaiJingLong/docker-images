@@ -6,5 +6,7 @@ if [ -z "$CADDY_VERSION" ]; then
   exit 1
 fi
 
-docker build -t kikt69/caddy:v${CADDY_VERSION}-alidns --build-arg CADDY_VERSION=$CADDY_VERSION .
-docker push kikt69/caddy
+VERSION="v${CADDY_VERSION}-alidns"
+
+docker build -t kikt69/caddy:${VERSION} --build-arg CADDY_VERSION=$CADDY_VERSION .
+docker push kikt69/caddy:${VERSION}
